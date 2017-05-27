@@ -70,6 +70,21 @@ public class TicTacToeClient {
 		}
 	}
 
+
+	private void board(byte[][] board){
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				char c = board[i][j] == 0? ' ':(board[i][j] == 1? 'X':'O');
+				System.out.print(c);
+				if(j != 2)
+					System.out.print("|");
+			}
+			if(i != 2)
+				System.out.println("\n-+-+-");
+		}
+		System.out.println("\n");
+	}
+
 	private void spaceOptions(byte[][] board){
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 3; j++){
@@ -86,19 +101,6 @@ public class TicTacToeClient {
 		System.out.println("\n");
 	}
 
-	private void board(byte[][] board){
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++){
-				char c = board[i][j] == 0? ' ':(board[i][j] == 1? 'X':'O');
-				System.out.print(c);
-				if(j != 2)
-					System.out.print("|");
-			}
-			if(i != 2)
-				System.out.println("\n-+-+-");
-		}
-		System.out.println("\n");
-	}
 
 	private String getUser(){
 		System.out.print("Enter a username: ");
